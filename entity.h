@@ -3,8 +3,8 @@
 
 #include <iostream>
 #include <string>
-#include <sstream> // Necesario para el formato de decimales
-#include <iomanip> // Necesario para setprecision
+#include <sstream>
+#include <iomanip>
 
 class Entity {
     std::string name;
