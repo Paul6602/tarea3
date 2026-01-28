@@ -19,14 +19,14 @@ public:
         y += dy;
     }
 
-    void heal(float amount) {
-        energy += amount;
+    void heal(float valor) {
+        energy += valor;
         if (energy > 100.0)
             energy = 100;
     }
 
-    void damage(float amount) {
-        energy -= amount;
+    void damage(float valor) {
+        energy -= valor;
         if (energy < 0.0)
             energy = 0.0;
     }
@@ -37,11 +37,11 @@ public:
         energy = 100.0;
     }
 
-    void printStatus() const {
+    void printStatus() {
         std::cout<<"entity: "<< name << "" << getStatus() << std::endl;
     }
 
-    std::string getStatus() const {
+    std::string getStatus() {
         std::ostringstream oss;
         oss << std::fixed << std::setprecision(2) << energy;
 
@@ -49,5 +49,4 @@ public:
                ") Energia:" + oss.str();
     }
 };
-
 #endif

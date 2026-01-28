@@ -24,13 +24,11 @@ public:
     CommandCenter(Entity& e) : entity(e) {}
 
     void registerCommand(const std::string& name, Command cmd) {
-        commands[name] = cmd;
+        commands[name]=cmd;
     }
-
     void registerMacro(const std::string& name, const MacroSteps& steps) {
-        macros[name] = steps;
+        macros[name]=steps;
     }
-
     bool executeCommand(const std::string& name, const std::list<std::string>& args) {
         std::map<std::string, Command>::iterator it = commands.find(name);
         if (it != commands.end()) {
@@ -67,10 +65,9 @@ public:
                 std::list<std::string> cmdArgs = stepIt->second;
 
                 if (commands.find(cmdName) == commands.end()) {
-                    std::cout << "[Error] Macro abortado. Paso '" << cmdName << "' no existe." << std::endl;
+                    std::cout << "[Error] Macro abortado. Paso " << cmdName << " no existe" << std::endl;
                     break;
                 }
-
                 executeCommand(cmdName, cmdArgs);
             }
             std::cout << "<<< Fin Macro: " << name << std::endl;
@@ -94,7 +91,7 @@ public:
         for (std::list<std::string>::const_iterator it = history.begin(); it != history.end(); ++it) {
             std::cout << *it << std::endl;
         }
-        std::cout << "------------------------------\n" << std::endl;
+        std::cout << "------------------------------" << std::endl;
     }
 };
 
