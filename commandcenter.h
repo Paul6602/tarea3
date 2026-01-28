@@ -80,13 +80,13 @@ public:
         std::map<std::string, Command>::iterator it = commands.find(name);
         if (it != commands.end()) {
             commands.erase(it);
-            std::cout << "[Info] Comando '" << name << "' eliminado." << std::endl;
+            std::cout << "[Info] Comando " << name << " eliminado" << std::endl;
         } else {
-            std::cout << "[Warning] No se pudo eliminar '" << name << "', no existe." << std::endl;
+            std::cout << "[Warning] No se pudo eliminar " << name << ", no existe" << std::endl;
         }
     }
 
-    void printHistory() const {
+    void printHistory() {
         std::cout << "\n--- Historial de Ejecucion ---" << std::endl;
         for (std::list<std::string>::const_iterator it = history.begin(); it != history.end(); ++it) {
             std::cout << *it << std::endl;
